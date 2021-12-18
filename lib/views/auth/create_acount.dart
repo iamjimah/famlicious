@@ -21,7 +21,30 @@ class CreateAccount extends StatelessWidget {
                   child: Image.asset("assets/avatar.png",
                       height: 130, width: 130)),
               TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                TextButton.icon(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      UniconsLine.camera_plus,
+                                      size: 35,
+                                    ),
+                                    label: Text("Take from Camera")),
+                                TextButton.icon(
+                                    onPressed: () {},
+                                    icon: Icon(UniconsLine.image, size: 35),
+                                    label: Text("Take from Camera"))
+                              ],
+                            ),
+                          );
+                        });
+                  },
                   icon: Icon(UniconsLine.camera),
                   label: Text("Upload Profile picture")),
               SizedBox(height: 20),
